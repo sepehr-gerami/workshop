@@ -4,9 +4,9 @@ import {Button, Dropdown, Label} from "@heroui/react";
 
 export function Default() {
   return (
-    <div className="flex flex-col  md:hidden">
+    <div className="flex flex-col ">
 
-    <Dropdown>
+    <Dropdown className="">
       <Button aria-label="Menu" variant="secondary">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5"/>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import  {WithIcons}  from "./WithIcons";
-type Product = {
+import { WithIcons } from "./WithIcons";
+
+
+export type Product = {
   id: number;
   title: string;
   price: number;
@@ -9,7 +11,7 @@ type Product = {
   image: string;
 };
 
-function Getdata() {
+function Getdata({search}:{search:string}) {
   const [newData, setNewdata] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -22,20 +24,26 @@ function Getdata() {
 
     fetchData();
   }, []);
+  const filtered = newData.filter((product)=>{
+   return  product.title.includes(search);
+  })
 
   return (
-    <div>
-      {newData.map((product) => (
+    <div >
+
+      {filtered.map((product) => (
         <div key={product.id} className="border p-4 mb-4 rounded-lg">
           <img src={product.image} alt={product.title} className="w-24 h-24 object-contain" />
           <h2 className="font-bold">{product.title}</h2>
           <p>{product.price} $</p>
           <p>{product.category}</p>
           <p>{product.description}</p>
-        <WithIcons/>
+          <WithIcons />
         </div>
       ))}
-   
+
+
+
     </div>
   );
 }

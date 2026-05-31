@@ -1,7 +1,10 @@
 import GetData from "./getdata";
+
 function Maine() {
   return (
-    <GetData/>
+    <>
+    <GetData />
+    </>
   )
 }
 
