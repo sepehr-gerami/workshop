@@ -1,6 +1,6 @@
 
 import { BiMoon } from "react-icons/bi";
-import { FiSun } from 'react-icons/fi';
+// import { FiSun } from 'react-icons/fi';
 import Navbar from './navbar';
 import SearchBox from './searchBox';
 import CustomBackdrop from './CustomBackdrop';

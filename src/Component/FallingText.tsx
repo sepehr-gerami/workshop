@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useEffect, useCallback } from 'react';
 import Matter from 'matter-js';
 
@@ -26,6 +27,7 @@ const FallingText: React.FC<FallingTextProps> = ({
   const textRef = useRef<HTMLDivElement | null>(null);
   const canvasContainerRef = useRef<HTMLDivElement | null>(null);
   const startedRef = useRef(false);
+
 
   const renderEffect = useCallback(() => {
     if (!containerRef.current || !canvasContainerRef.current || !textRef.current) return;
@@ -149,7 +151,7 @@ const FallingText: React.FC<FallingTextProps> = ({
       Engine.clear(engine);
       startedRef.current = false;
     };
-  });
+  },[]);
 
   useEffect(() => {
     if (!textRef.current) return;
