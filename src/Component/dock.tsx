@@ -71,9 +71,9 @@ function DockItem({
         width: size,
         height: size
       }}
-      onHoverStart={() => isHovered.set(1)}
-      onHoverEnd={() => isHovered.set(0)}
-      onFocus={() => isHovered.set(1)}
+     
+    
+      
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
       className={`relative inline-flex items-center justify-center rounded-full bg-gray-100 backdrop-blur-3xl border-gray-200 border shadow-md ${className}`}
@@ -114,10 +114,10 @@ function DockLabel({ children, className = '', isHovered }: DockLabelProps) {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.5 }}
           className={`${className} absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border text-gray-800 px-2 py-0.5 text-xs`}
           role="tooltip"
-          style={{ x: '-50%' }}
+          style={{ x: '-10%' }}
         >
           {children}
         </motion.div>
@@ -140,10 +140,10 @@ export default function Dock({
   items,
   className = '',
   spring = { mass: 0.1, stiffness: 150, damping: 12 },
-  magnification = 70,
-  distance = 200,
-  panelHeight = 64,
-  dockHeight = 256,
+  magnification = 62,
+  distance = 90,
+  panelHeight = 74,
+  dockHeight = 15,
   baseItemSize = 50
 }: DockProps) {
   const mouseX = useMotionValue(Infinity);
@@ -164,7 +164,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 w-full left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-8 rounded-full bg-transparent  backdrop-blur-3xl border-gray-500/80 border pb-1 px-4 md:hidden`}
+        className={`${className} absolute bottom-2  left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-8 rounded-full bg-transparent  backdrop-blur-3xl border-gray-500/80 border pb-1 px-4 md:hidden`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"

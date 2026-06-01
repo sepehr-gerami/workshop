@@ -5,7 +5,7 @@ import Navbar from './navbar';
 import SearchBox from './searchBox';
 import CustomBackdrop from './CustomBackdrop';
 import type { Dispatch, SetStateAction } from 'react';
-import FallingText from "./FallingText";
+import GradientText from './GradientText'
 
 
 type HeaderProps = {
@@ -23,7 +23,7 @@ const Header = ({ search, setSearch }: HeaderProps) => {
         className="
           fixed top-0 left-0 right-0 z-50
           flex justify-between items-center
-          px-6 py-2 mx-2 my-2 
+          px-2  mx-2 my-2 
           rounded-[50px]
           bg-white/20 backdrop-blur-md
           border border-gray-200
@@ -33,11 +33,19 @@ const Header = ({ search, setSearch }: HeaderProps) => {
         <div className="block md:hidden">
           <CustomBackdrop />
         </div>
-        
-            <FallingText text="GapMarket Shope product"/>
-     
-        
-    
+
+
+
+
+        <GradientText
+          colors={["#70052c", "#d86c21", "#a5a1a1"]}
+          animationSpeed={4}
+          showBorder={false}
+          className="custom-class"
+        >
+        Figma ti code!
+        </GradientText>
+
 
 
         <div className="hidden md:flex">
